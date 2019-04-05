@@ -1,0 +1,19 @@
+<form action="/figures/<%=@figure.id%>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <label for="figure_name">Name</label>
+
+  <input id="figure_name" type="text" name="figure[name]" value="<%=@figure.name%>">
+  <input type="submit" value="Edit Figure">
+
+  <fieldset>
+  <legend>Choose Some Titles For This Figure</legend>
+  <div>
+      <%@titles.each do |title|  %>
+    <input type="checkbox" id="<%=title.name%>" name="figure[<%= title.id%>][]" value="<%=title.name%>">
+    <label for="figure[<%= title.id%>][]"><%=title.name%></label>
+    <%end%>
+  </div>
+
+</fieldset>
+
+</form>

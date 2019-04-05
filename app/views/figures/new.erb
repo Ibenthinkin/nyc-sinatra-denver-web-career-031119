@@ -1,0 +1,21 @@
+<form action="/figures" method="post">
+
+  <label for="figure_name">Name</label>
+  <input id="figure_name" type="text" name="figure[name]" >
+  <input type="submit" value="Add New Figure">
+
+    <fieldset>
+    <legend>Choose Some Titles For This Figure</legend>
+    <div>
+      <%arr = []%>
+        <%@titles.each do |title|  %>
+    
+      <input type="checkbox" id="<%=title.name%>" name="title" value=<%=title%>>
+      <label for="<%=title.name%>"><%=title.name%></label>
+      <%end%>
+    </div>
+
+  </fieldset>
+
+
+</form>
